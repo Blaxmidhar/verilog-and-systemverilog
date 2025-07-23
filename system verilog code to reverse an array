@@ -1,0 +1,12 @@
+module reverseArray();
+  bit[3:0]array[]='{1,2,3,4,5};
+  bit[3:0]temp[5];
+  initial begin
+    foreach(array[i])$display("array[%0d]=%0d",i,array[i]);
+    for(int i=0;i<5;i++)
+      temp[i]=array[5-i-1];
+    for(int i=0;i<5;i++)
+      array[i]=temp[i];
+       foreach(array[i])$display("array[%0d]=%0d",i,array[i]);
+  end
+endmodule
